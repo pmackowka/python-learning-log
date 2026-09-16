@@ -1,4 +1,4 @@
-'''LAB - Klasa a instancja
+"""LAB - Klasa a instancja
 Pracujemy z wynikiem LAB z poprzedniej lekcji.
 
 Dodaj do klasy Cake atrybut na poziomie klasy. Nazwij go known_kinds. Będą w nim przechowywane produkowane w naszej cukierni słodkości. Przypisz do zmiennej listę np. w następującej postaci:
@@ -25,32 +25,41 @@ Zmień pętlę wyświetlającą informację o ofercie cukierni tak, aby korzysta
 
 Sprawdź czy obiekty cake01 i inne są instancjami klasy Cake korzystając z funkcji isinstance i type
 
-Wyświetl informacje o instancji cake01 i o klasie Cake korzystając z funkcji vars i dir'''
+Wyświetl informacje o instancji cake01 i o klasie Cake korzystając z funkcji vars i dir"""
+
 
 class Ciasto:
-
-    znane_rodzaje = ['ciasto', 'muffin', 'beza', 'herbatnik', 'ekler', 'świąteczne', 'precel', 'inne']
+    znane_rodzaje = [
+        "ciasto",
+        "muffin",
+        "beza",
+        "herbatnik",
+        "ekler",
+        "świąteczne",
+        "precel",
+        "inne",
+    ]
     oferta_cukierni = []
 
     def __init__(self, nazwa, rodzaj, smak, dodatki, nadzienie):
         self.nazwa = nazwa
-        self.rodzaj = rodzaj if rodzaj in Ciasto.znane_rodzaje else 'inne'
+        self.rodzaj = rodzaj if rodzaj in Ciasto.znane_rodzaje else "inne"
         self.smak = smak
         self.dodatki = dodatki.copy()
         self.nadzienie = nadzienie
         Ciasto.oferta_cukierni.append(self)
 
     def pokaz_informacje(self):
-        print("{}".format(self.nazwa.upper()))
-        print("Rodzaj:    {}".format(self.rodzaj))
-        print("Smak:     {}".format(self.smak))
+        print(f"{self.nazwa.upper()}")
+        print(f"Rodzaj:    {self.rodzaj}")
+        print(f"Smak:     {self.smak}")
         if len(self.dodatki) > 0:
             print("Dodatki:")
             for dodatek in self.dodatki:
-                print("\t{}".format(dodatek))
+                print(f"\t{dodatek}")
         if len(self.nadzienie) > 0:
-            print("Nadzienie: {}".format(self.nadzienie))
-        print('-' * 20)
+            print(f"Nadzienie: {self.nadzienie}")
+        print("-" * 20)
 
     def ustaw_nadzienie(self, nadzienie):
         self.nadzienie = nadzienie
@@ -58,13 +67,16 @@ class Ciasto:
     def dodaj_dodatki(self, nowe_dodatki):
         self.dodatki.extend(nowe_dodatki)
 
-ciasto01 = Ciasto('Ciasto Waniliowe', 'ciasto', 'waniliowe', ['czekolada', 'orzechy'], 'krem')
-ciasto02 = Ciasto('Czekoladowy Muffin', 'muffin', 'czekoladowy', ['czekolada'], '')
-ciasto03 = Ciasto('Super Słodka Beza', 'beza', 'bardzo słodka', [], '')
-ciasto04 = Ciasto('Wafel Kakaowy', 'wafel', 'kakaowy', [], 'kakao')
 
-ciasto02.ustaw_nadzienie('waniliowy krem')
-ciasto03.dodaj_dodatki(['proszek kakaowy', 'wiórki kokosowe'])
+ciasto01 = Ciasto(
+    "Ciasto Waniliowe", "ciasto", "waniliowe", ["czekolada", "orzechy"], "krem"
+)
+ciasto02 = Ciasto("Czekoladowy Muffin", "muffin", "czekoladowy", ["czekolada"], "")
+ciasto03 = Ciasto("Super Słodka Beza", "beza", "bardzo słodka", [], "")
+ciasto04 = Ciasto("Wafel Kakaowy", "wafel", "kakaowy", [], "kakao")
+
+ciasto02.ustaw_nadzienie("waniliowy krem")
+ciasto03.dodaj_dodatki(["proszek kakaowy", "wiórki kokosowe"])
 
 print("Dziś w naszej ofercie:")
 for ciasto in Ciasto.oferta_cukierni:

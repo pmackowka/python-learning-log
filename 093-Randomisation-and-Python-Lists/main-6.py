@@ -1,8 +1,30 @@
-dirty_dozen = ["Strawberries", "Spinach", "Kale", "Nectarines", "Apples", "Grapes", "Peaches", "Cherries", "Pears", "Tomatoes", "Celery", "Potatoes"]
+# Lista list (fruits, vegetables) i dostęp do elementu przez podwójny indeks [][].
+dirty_dozen = [
+    "Strawberries",
+    "Spinach",
+    "Kale",
+    "Nectarines",
+    "Apples",
+    "Grapes",
+    "Peaches",
+    "Cherries",
+    "Pears",
+    "Tomatoes",
+    "Celery",
+    "Potatoes",
+]
 
-fruits = ["Strawberries", "Nectarines", "Apples", "Grapes", "Peaches", "Cherries", "Pears"]
+fruits = [
+    "Strawberries",
+    "Nectarines",
+    "Apples",
+    "Grapes",
+    "Peaches",
+    "Cherries",
+    "Pears",
+]
 vegetables = ["Spinach", "Kale", "Tomatoes", "Celery", "Potatoes"]
 
 dirty_dozen = [fruits, vegetables]
 
-print(dirty_dozen[1][1]) # Kale
+print(dirty_dozen[1][1])  # Kale

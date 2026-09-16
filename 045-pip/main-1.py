@@ -2,7 +2,8 @@
 
 # pip install nazwa_modułu
 
-from colorama import init, Fore, Back, Style
+from colorama import Back, Fore, Style, init
+
 init()
 print(Fore.RED + "Tekst na czerwono")
 print(Back.YELLOW + "... na żółtym tle")

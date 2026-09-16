@@ -1,11 +1,12 @@
+# Pętla while - numeracja wierszy, tabliczka kwadratów/sześcianów, potęgi 2, trójkąt z "x".
 firstRow = 1
 lastRow = 5
 
 currentRow = firstRow
 
 while currentRow <= lastRow:
-    print("Row number",currentRow)
-    currentRow+=1
+    print("Row number", currentRow)
+    currentRow += 1
 
 # Row number 1
 # Row number 2
@@ -19,9 +20,9 @@ end = 5
 
 number = start
 
-while number<=end:
-    print(number, number*number, number*number*number)
-    number+=1
+while number <= end:
+    print(number, number * number, number * number * number)
+    number += 1
 
 # 1 1 1
 # 2 4 8
@@ -34,9 +35,9 @@ start = 0
 end = 5
 
 x = start
-while x<=end:
+while x <= end:
     print(x, 2**x)
-    x+=1
+    x += 1
 
 # 0 1
 # 1 2
@@ -47,13 +48,13 @@ while x<=end:
 print("#################")
 
 start = 1
-end   = 10
+end = 10
 number = start
 
-while number<=end:
-    print(number*'x')
-    number+=1
-    
+while number <= end:
+    print(number * "x")
+    number += 1
+
 # x
 # xx
 # xxx

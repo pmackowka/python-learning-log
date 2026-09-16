@@ -1,11 +1,11 @@
-'''LAB - Iteracja po słowniku
+"""LAB - Iteracja po słowniku
 Piszesz program, który będzie obsługiwał wpłatomat. To będzie super nowoczesny wpłatomat, do którego można też wpłacać monety. Ilekroć ktoś wpłaca pieniądze należy policzyć ile banknotów lub monet danego nominału znajduje się w kasie.
 
-Zacznij od poniższej listy, która definiuje dostępne nominały:'''
+Zacznij od poniższej listy, która definiuje dostępne nominały:"""
 
 banknotes_coins = [0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1, 2, 5, 10, 20, 50, 100, 200, 500]
 
-'''Dowolną metodą utwórz słownik, który jako klucz będzie przechowywał wartość nominału, a jeśli chodzi o wartości słownika, to póki co mają być zerowe. Proponuję nazwać ten słownik dict_denominations.
+"""Dowolną metodą utwórz słownik, który jako klucz będzie przechowywał wartość nominału, a jeśli chodzi o wartości słownika, to póki co mają być zerowe. Proponuję nazwać ten słownik dict_denominations.
 
 Teraz do bankomatu podchodzą klienci i wpłacają:
 
@@ -48,7 +48,7 @@ Denominate: 100.00 - amount     2
 Denominate: 200.00 - amount     0
 Denominate: 500.00 - amount     0
 
-'''
+"""
 
 # Lista dostępnych nominałów
 banknotes_coins = [0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1, 2, 5, 10, 20, 50, 100, 200, 500]
@@ -56,12 +56,12 @@ banknotes_coins = [0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1, 2, 5, 10, 20, 50, 100, 20
 # Utworzenie słownika z kluczami jako nominałami i początkową wartością 0
 dict_denominations = {denomination: 0 for denomination in banknotes_coins}
 
-print("-"*20)
+print("-" * 20)
 print(banknotes_coins)
-print("-"*20)
+print("-" * 20)
 print(dict_denominations)
 
-print("-"*20)
+print("-" * 20)
 
 # Symulacja wpłat klientów
 dict_denominations[100] += 1
@@ -79,7 +79,7 @@ dict_denominations[50] += 1
 dict_denominations[2] += 1
 
 print(dict_denominations)
-print("-"*20)
+print("-" * 20)
 
 # Wyświetlenie wyników w odpowiednim formacie
 print("Denominate: Amount")
@@ -87,4 +87,6 @@ print("-" * 25)
 
 for denomination in sorted(dict_denominations.keys()):
     # Formatowanie wyniku - nominał na 6 znakach z 2 miejscami po przecinku, ilość na maks. 5 znaków
-    print(f"Denominate: {denomination:6.2f} - amount {dict_denominations[denomination]:5d}")
+    print(
+        f"Denominate: {denomination:6.2f} - amount {dict_denominations[denomination]:5d}"
+    )

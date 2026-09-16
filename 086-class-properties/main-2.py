@@ -1,4 +1,4 @@
-'''LAB - Właściwości klasy
+"""LAB - Właściwości klasy
 W tym LAB pracujemy z klasą z poprzedniej lekcji (jeśli nie masz rozwiązania skopiuj sobie moją propozycję rozwiązania z poprzedniej lekcji)
 
 Do klasy należy dodać atrybut ukryty __text. Odpowiada on za napis umieszczony na torcie.
@@ -17,7 +17,8 @@ Tworząc obiekty klasy Cake przekaż dodatkowy argument text - umieść napisy p
 
 Wyświetl wszystkie informacje o wszystkich wypiekach
 
-Spróbuj wstawić do właściwości Text napis na torcie i na innym wypieku nietortowym - prześledź poprawność tych operacji ponownie wyświetlając ofertę cukierni'''
+Spróbuj wstawić do właściwości Text napis na torcie i na innym wypieku nietortowym - prześledź poprawność tych operacji ponownie wyświetlając ofertę cukierni"""
+
 
 class Cake:
     # Atrybuty klasy
@@ -30,10 +31,10 @@ class Cake:
         self.taste = taste  # Smak wypieku
         self.additives = additives  # Dodatki do wypieku
         self.filling = filling  # Nadzienie
-        self.__text = ''  # Ukryty atrybut na napis
+        self.__text = ""  # Ukryty atrybut na napis
 
         # Sprawdzanie poprawności dla text
-        if kind == 'cake' or text == '':
+        if kind == "cake" or text == "":
             self.__text = text
         else:
             print(f"Nie można ustawić napisu '{text}' na wypieku '{kind}'.")
@@ -48,7 +49,7 @@ class Cake:
         print(f"Dodatki: {', '.join(self.additives) if self.additives else 'Brak'}")
         print(f"Nadzienie: {self.filling if self.filling else 'Brak'}")
         print(f"Napis na torcie: '{self.__text}'")
-        print('-' * 20)
+        print("-" * 20)
 
     # Ukryta metoda getter dla atrybutu __text
     def __get_text(self):
@@ -56,20 +57,35 @@ class Cake:
 
     # Ukryta metoda setter dla atrybutu __text
     def __set_text(self, new_text):
-        if self.kind == 'cake':
+        if self.kind == "cake":
             self.__text = new_text
             print(f"Zmieniono napis na torcie '{self.name}' na '{new_text}'.")
         else:
             print(f"Nie można ustawić napisu '{new_text}' na wypieku '{self.kind}'.")
 
     # Właściwość dla atrybutu __text
-    Text = property(__get_text, __set_text, None, 'Właściwość dla napisu na torcie.')
+    Text = property(__get_text, __set_text, None, "Właściwość dla napisu na torcie.")
+
 
 # Tworzenie obiektów klasy Cake
-cake_01 = Cake('Tort Czekoladowy', 'cake', 'czekoladowy', ['orzechy', 'posypka'], 'krem waniliowy', 'Wszystkiego najlepszego')
-cake_02 = Cake('Ciastko z Kremem', 'cookie', 'waniliowe', [], '', '')
-cake_03 = Cake('Tort Owocowy', 'cake', 'truskawkowy', ['truskawki', 'bita śmietana'], 'dżem truskawkowy', 'Sto lat!')
-cake_04 = Cake('Wafel z Czekoladą', 'waffle', 'czekoladowy', [], '', 'Smacznego!')
+cake_01 = Cake(
+    "Tort Czekoladowy",
+    "cake",
+    "czekoladowy",
+    ["orzechy", "posypka"],
+    "krem waniliowy",
+    "Wszystkiego najlepszego",
+)
+cake_02 = Cake("Ciastko z Kremem", "cookie", "waniliowe", [], "", "")
+cake_03 = Cake(
+    "Tort Owocowy",
+    "cake",
+    "truskawkowy",
+    ["truskawki", "bita śmietana"],
+    "dżem truskawkowy",
+    "Sto lat!",
+)
+cake_04 = Cake("Wafel z Czekoladą", "waffle", "czekoladowy", [], "", "Smacznego!")
 
 # Wyświetlenie początkowych informacji o wypiekach
 print("Początkowa oferta cukierni:")
@@ -77,10 +93,10 @@ for cake in Cake.bakery_offer:
     cake.show_info()
 
 # Próba zmiany napisu na torcie i innych wypiekach
-cake_01.Text = 'Najlepszego!'
-cake_02.Text = 'Smacznego!'
-cake_03.Text = 'Dla Ciebie'
-cake_04.Text = 'Pyszności'
+cake_01.Text = "Najlepszego!"
+cake_02.Text = "Smacznego!"
+cake_03.Text = "Dla Ciebie"
+cake_04.Text = "Pyszności"
 
 # Wyświetlenie końcowych informacji o wypiekach
 print("Końcowa oferta cukierni:")

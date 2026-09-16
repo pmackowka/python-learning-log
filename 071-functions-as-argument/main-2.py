@@ -1,13 +1,17 @@
+# Funkcja jako argument innej funkcji - greet(how, name) wywołuje przekazaną funkcję how.
 def say_hello(name):
-    print("Hello {}!".format(name))
+    print(f"Hello {name}!")
+
 
 def say_good_morning(name):
-    print("Good morning {}!".format(name))
+    print(f"Good morning {name}!")
+
 
 def greet(how, name):
-    how(name) # say_hello('Captain')
+    how(name)  # say_hello('Captain')
 
-greet(say_hello, 'Captain')
+
+greet(say_hello, "Captain")
 # Hello Captain!
 
-("-"*30)
+print("-" * 30)

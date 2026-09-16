@@ -1,15 +1,31 @@
-ports = ['WAW', 'KRK', 'GDN', 'KTW', 'WMI', 'WRO', 'POZ', 'RZE', 'SZZ',
-         'LUZ', 'BZG', 'LCJ', 'SZY', 'IEG', 'RDO']
+# Iloczyn kartezjański lotnisk (wszystkie pary, bez powtórzeń, tylko rosnąco) przez list comprehension.
+ports = [
+    "WAW",
+    "KRK",
+    "GDN",
+    "KTW",
+    "WMI",
+    "WRO",
+    "POZ",
+    "RZE",
+    "SZZ",
+    "LUZ",
+    "BZG",
+    "LCJ",
+    "SZY",
+    "IEG",
+    "RDO",
+]
 
-routes = [ (start, stop) for start in ports for stop in ports]
+routes = [(start, stop) for start in ports for stop in ports]
 print(routes)
 print(len(routes))
 
-routes = [ (start, stop) for start in ports for stop in ports if start != stop]
+routes = [(start, stop) for start in ports for stop in ports if start != stop]
 print(routes)
 print(len(routes))
 
 
-routes = [ (start, stop) for start in ports for stop in ports if start < stop]
+routes = [(start, stop) for start in ports for stop in ports if start < stop]
 print(routes)
 print(len(routes))

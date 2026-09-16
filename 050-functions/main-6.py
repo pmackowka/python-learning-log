@@ -1,9 +1,10 @@
+# Dowolna liczba argumentów (*animals, *dates) zamiast pojedynczego parametru.
 def PrintAnimal(*animals):
     # this function prints a cat, bear or bat ascii-art
-    txt_cat = r'''
+    txt_cat = r"""
 |\---/|
 | o_o |
- \_^_/'''
+ \_^_/"""
     txt_bear = r'''
 /  \.-"""-./  \
 \    -   -    /
@@ -11,49 +12,52 @@ def PrintAnimal(*animals):
  \  .-'"'-.  /
   '-\__Y__/-'
      `---`'''
-    txt_bat = r'''
+    txt_bat = r"""
    /\                 /\
   / \'._   (\_/)   _.'/ \
  /_.''._'--('.')--'_.''._\
  | \_ / `;=/ " \=;` \ _/ |
   \/ `\__|`\___/`|__/`  \/
           \(/|\)/
-     '''
+     """
 
     for animal in animals:
-        if animal == 'cat':
+        if animal == "cat":
             print(txt_cat)
-        elif animal == 'bear':
+        elif animal == "bear":
             print(txt_bear)
-        elif animal == 'bat':
+        elif animal == "bat":
             print(txt_bat)
         else:
-            print("Cannot print '%s'. Correct values for the parameter are: cat, bear, bat" % animal)
+            print(
+                "Cannot print '%s'. Correct values for the parameter are: cat, bear, bat"
+                % animal
+            )
 
-    return
 
-PrintAnimal('cat','bat')
-print('-------------------------------------')
-PrintAnimal('cat','bat','dog','bear')
-print('-------------------------------------')
+PrintAnimal("cat", "bat")
+print("-------------------------------------")
+PrintAnimal("cat", "bat", "dog", "bear")
+print("-------------------------------------")
 PrintAnimal()
 
-print('----------------')
+print("----------------")
 
 from datetime import date
+
 
 def DaysToEndOfYear(*dates):
 
     for date_today in dates:
-
         date_end_year = date(date_today.year, 12, 31)
         delta = date_end_year - date_today
-        print('Date', date_today, 'days to end of year', delta.days)
+        print("Date", date_today, "days to end of year", delta.days)
 
-DaysToEndOfYear(date(1999,1,15))
-print('----------------')
-DaysToEndOfYear(date(1999,1,15),date(2009,1,15))
-print('----------------')
-DaysToEndOfYear(date(1999,1,15),date(2009,1,15),date(2019,1,15))
-print('----------------')
-DaysToEndOfYear(date(1999,1,15),date(2009,1,15),date(2019,1,15),date.today())
+
+DaysToEndOfYear(date(1999, 1, 15))
+print("----------------")
+DaysToEndOfYear(date(1999, 1, 15), date(2009, 1, 15))
+print("----------------")
+DaysToEndOfYear(date(1999, 1, 15), date(2009, 1, 15), date(2019, 1, 15))
+print("----------------")
+DaysToEndOfYear(date(1999, 1, 15), date(2009, 1, 15), date(2019, 1, 15), date.today())

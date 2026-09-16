@@ -6,6 +6,6 @@ print(10 / 3)
 
 digits = input("Enter a number: ")
 if int(digits) % 2 == 0:
-	print("The number is even.")
+    print("The number is even.")
 else:
-	print("The number is odd.")
+    print("The number is odd.")

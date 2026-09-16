@@ -1,11 +1,12 @@
-menu = '''
+# Pętla while True z menu i break/continue - prosta konsolowa aplikacja z ASCII-artem.
+menu = """
 Choose what you want me to do for you:
 1 - COFFEE
 2 - TEA
 3 - MAKE ME SMILE
 ---------------
 To stop this script select 0
-'''
+"""
 
 smile = '''
 
@@ -38,27 +39,25 @@ oo $ $ "$      o$$$$$$$$$    $$$$$$$$$$$$$    $$$$$$$$$o       $$$o$$o$
 '''
 
 while True:
-
     print(menu)
-    letter = input('Enter your choice  ')
+    letter = input("Enter your choice  ")
 
-    if letter == '1':
+    if letter == "1":
         print("Function COFFEE not implemented")
-        input('Press enter')
+        input("Press enter")
         continue
 
-    if letter == '2':
+    if letter == "2":
         print("Function TEA not implemented")
-        input('Press enter')
+        input("Press enter")
         continue
 
-    if letter =='3':
+    if letter == "3":
         print(smile)
-        input('Press enter')
+        input("Press enter")
         continue
 
-    if letter == '0':
+    if letter == "0":
         break
 
-    input('You need to make a valid choice. Press ENTER and try again!')
-    
+    input("You need to make a valid choice. Press ENTER and try again!")

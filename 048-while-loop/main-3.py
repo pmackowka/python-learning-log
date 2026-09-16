@@ -1,14 +1,16 @@
-print('------------------------------')
+# Pętla while po indeksie - szukanie sąsiednich elementów spełniających warunek
+# (kwadrat kolejnej liczby, ciąg trzech liczb, jednakowa długość sąsiednich słów).
+print("------------------------------")
 
 numbers = [8, 18, 2, 4, 16, 5, 25, 4, 22, 3, 3, 5, 3, 9, 81, 11]
 i = 0
-max = len(numbers)-1
+max = len(numbers) - 1
 
 while i < max:
-    print(i, numbers[i],numbers[i+1])
-    if numbers[i]**2 == numbers[i+1]:
+    print(i, numbers[i], numbers[i + 1])
+    if numbers[i] ** 2 == numbers[i + 1]:
         print("\tFOUND!")
-    i+=1
+    i += 1
 
 # 0 8 18
 # 1 18 2
@@ -30,18 +32,18 @@ while i < max:
 # 13 9 81
 #         FOUND!
 # 14 81 11
-print('------------------------------')
+print("------------------------------")
 
 numbers = [8, 18, 2, 4, 16, 5, 25, 4, 22, 3, 3, 5, 3, 9, 81, 11]
 i = 0
-max = len(numbers)-2
+max = len(numbers) - 2
 
 while i < max:
-    print(i, numbers[i],numbers[i+1], numbers[i+2])
-    if numbers[i]**2 == numbers[i+1] and numbers[i+1]**2 == numbers[i+2]:
+    print(i, numbers[i], numbers[i + 1], numbers[i + 2])
+    if numbers[i] ** 2 == numbers[i + 1] and numbers[i + 1] ** 2 == numbers[i + 2]:
         print("\tFOUND!")
 
-    i+=1
+    i += 1
 
 # 0 8 18 2
 # 1 18 2 4
@@ -59,19 +61,18 @@ while i < max:
 # 12 3 9 81
 #         FOUND!
 # 13 9 81 11
-print('------------------------------')
+print("------------------------------")
 
-texts = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
+texts = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
 i = 0
-max = len(texts)-1
+max = len(texts) - 1
 
-while i<max:
-    print(i, texts[i],texts[i+1])
-    if len(texts[i]) == len(texts[i+1]):
-
+while i < max:
+    print(i, texts[i], texts[i + 1])
+    if len(texts[i]) == len(texts[i + 1]):
         print("\tFOUND!")
 
-    i+=1
+    i += 1
 
 # 0 zero one
 # 1 one two

@@ -1,4 +1,4 @@
-'''Funkcje:
+"""Funkcje:
 - ResultsReady()
 oraz
 - ProcessMessages()
@@ -36,4 +36,4 @@ Podczas uruchomienia w/w kodu funkcja ResultsReady() zwraca False. Wybierz popra
 Funkcja: ProcessMessages() będzie uruchomiona
 
 
-'''
+"""

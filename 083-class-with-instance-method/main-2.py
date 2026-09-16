@@ -1,4 +1,4 @@
-'''LAB - Metody instancji klasy
+"""LAB - Metody instancji klasy
 Do klasy z poprzedniego zadania dodaj 3 metody:
 
 show info, która
@@ -36,27 +36,28 @@ VANILLA CAKE
 Kind:    cake
 Taste:   vanilla
 Additives:
-	chocolade
-	nuts
+        chocolade
+        nuts
 Filling: cream
 --------------------
 CHOCOLADE MUFFIN
 Kind:    muffin
 Taste:   chocolade
 Additives:
-	chocolade
+        chocolade
 Filling: vanilla cream
 --------------------
 SUPER SWEET MARINGUE
 Kind:    meringue
 Taste:   very sweet
 Additives:
-	cocoa powder
-	coconuts
---------------------'''
+        cocoa powder
+        coconuts
+--------------------"""
+
 
 class Ciasto:
-    def __init__(self, nazwa, rodzaj, smak, dodatki=None, nadzienie=''):
+    def __init__(self, nazwa, rodzaj, smak, dodatki=None, nadzienie=""):
         self.nazwa = nazwa
         self.rodzaj = rodzaj
         self.smak = smak
@@ -73,7 +74,7 @@ class Ciasto:
                 print(f"\t{dodatek}")
         if self.nadzienie:
             print(f"Nadzienie: {self.nadzienie}")
-        print('-' * 20)
+        print("-" * 20)
 
     def ustaw_nadzienie(self, nadzienie):
         self.nadzienie = nadzienie
@@ -87,21 +88,17 @@ ciasto_1 = Ciasto(
     rodzaj="ciasto",
     smak="waniliowy",
     dodatki=["czekolada", "orzechy"],
-    nadzienie="krem"
+    nadzienie="krem",
 )
 
 ciasto_2 = Ciasto(
     nazwa="Muffinka Czekoladowa",
     rodzaj="muffinka",
     smak="czekoladowy",
-    dodatki=["czekolada"]
+    dodatki=["czekolada"],
 )
 
-ciasto_3 = Ciasto(
-    nazwa="Super Słodka Beza",
-    rodzaj="beza",
-    smak="bardzo słodki"
-)
+ciasto_3 = Ciasto(nazwa="Super Słodka Beza", rodzaj="beza", smak="bardzo słodki")
 
 ciasto_2.ustaw_nadzienie("krem waniliowy")
 ciasto_3.dodaj_dodatki(["kakao", "wiórki kokosowe"])
@@ -112,7 +109,7 @@ print("Dzisiejsza oferta:")
 for ciasto in oferta_cukierni:
     ciasto.pokaz_informacje()
 
-print('-'*30)
+print("-" * 30)
 
 # Dzisiejsza oferta:
 # CIASTO WANILIOWE

@@ -1,49 +1,50 @@
+# Menu wyboru opcji w pętli while - ta sama logika najpierw bez komentarzy, potem z komentarzami.
 def DisplayOptions(options):
     for i in range(len(options)):
-        print("{} - {}".format(i+1, options[i]))
+        print(f"{i + 1} - {options[i]}")
 
-    choice = input('Select option above or press enter to exit: ')
+    choice = input("Select option above or press enter to exit: ")
     return choice
 
 
-choice='x'
-options = ['load data', 'export data', 'analyze & predict']
+choice = "x"
+options = ["load data", "export data", "analyze & predict"]
 
 while choice:
-
     choice = DisplayOptions(options)
 
-    #executed only if something was entered
+    # executed only if something was entered
     if choice:
         try:
-            choice_num = int(choice)-1
-            if choice_num >=0 and choice_num < len(options):
-                print("you have selected {} - {}".format(choice_num+1, options[choice_num]))
+            choice_num = int(choice) - 1
+            if choice_num >= 0 and choice_num < len(options):
+                print(f"you have selected {choice_num + 1} - {options[choice_num]}")
             else:
                 print("choose a value from a list or press enter")
         except:
             print("You need to enter a number")
     else:
-        print('----- END -----')
+        print("----- END -----")
 
 
+print(20 * "-")
 
 
-print(20*"-")
 def DisplayOptions(options):
     # Funkcja, która wyświetla dostępne opcje z listy oraz zwraca wybór użytkownika
     for i in range(len(options)):
         # Iterujemy przez listę opcji i wyświetlamy każdą z nich z przypisanym numerem
-        print("{} - {}".format(i+1, options[i]))
+        print(f"{i + 1} - {options[i]}")
 
     # Pobieramy wybór użytkownika; jeśli użytkownik nic nie wpisze, zwracany będzie pusty ciąg
-    choice = input('Select option above or press enter to exit: ')
+    choice = input("Select option above or press enter to exit: ")
     return choice  # Zwracamy wybór użytkownika (może to być numer opcji lub pusty ciąg)
 
+
 # Inicjalizacja zmiennej choice na wartość 'x', aby warunek pętli while był spełniony przy pierwszym przebiegu
-choice = 'x'
+choice = "x"
 # Definicja listy opcji, które będą wyświetlane użytkownikowi
-options = ['load data', 'export data', 'analyze & predict']
+options = ["load data", "export data", "analyze & predict"]
 
 # Pętla while działa, dopóki zmienna choice nie jest pusta (czyli użytkownik nie nacisnął Enter bez wpisywania wartości)
 while choice:
@@ -54,10 +55,12 @@ while choice:
     if choice:
         try:
             # Próba zamiany wpisanego przez użytkownika tekstu na liczbę całkowitą (numer opcji)
-            choice_num = int(choice)-1  # Odejmujemy 1, aby dopasować numer opcji do indeksu listy
+            choice_num = (
+                int(choice) - 1
+            )  # Odejmujemy 1, aby dopasować numer opcji do indeksu listy
             if choice_num >= 0 and choice_num < len(options):
                 # Jeśli numer opcji jest poprawny (mieści się w zakresie indeksów listy)
-                print("you have selected {} - {}".format(choice_num+1, options[choice_num]))
+                print(f"you have selected {choice_num + 1} - {options[choice_num]}")
             else:
                 # Jeśli numer opcji jest spoza zakresu, informujemy użytkownika o poprawnych wartościach
                 print("choose a value from a list or press enter")
@@ -66,4 +69,4 @@ while choice:
             print("You need to enter a number")
     else:
         # Blok else działa, gdy zmienna choice jest pusta (użytkownik nacisnął Enter bez wpisywania wartości)
-        print('----- END -----')  # Wyświetlamy komunikat końcowy
+        print("----- END -----")  # Wyświetlamy komunikat końcowy

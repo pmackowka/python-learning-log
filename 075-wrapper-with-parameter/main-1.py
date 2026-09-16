@@ -1,27 +1,37 @@
-import datetime
-import functools
+"""Dekorator logujący wywołania funkcji (argumenty, wynik, timestamp) do pliku function_log.txt."""
 
-function_log = "/Users/p/Documents/Scripts/Programming/075-wrapper-with-parameter/function_log.txt"
+import datetime
+from pathlib import Path
+
+function_log = Path(__file__).parent / "function_log.txt"
+
 
 def CreateFunctionWithWrapper(func):
-	def func_with_wrapper(*args, **kwargs):
-		file = open(function_log,'a')
-		file.write("-"*20+"\n")
-		file.write('Function "{}" started at {}\n'.format(func.__name__, datetime.datetime.now().isoformat()))
-		file.write("Following arguments were used:\n")
-		file.write(" ".join("{}".format(i) for i in args)) # Zapisywać mogę tylko str więc konwertuje
-		file.write("\n")
-		file.write(" ".join("{}={}\n".format(k, v) for k, v in kwargs.items()))
-		result = func(*args, **kwargs)
-		file.write("Function returned {}\n".format(result))
-		file.close()
-		return result
-	return func_with_wrapper
+    def func_with_wrapper(*args, **kwargs):
+        file = open(function_log, "a")
+        file.write("-" * 20 + "\n")
+        file.write(
+            f'Function "{func.__name__}" started at {datetime.datetime.now().isoformat()}\n'
+        )
+        file.write("Following arguments were used:\n")
+        file.write(
+            " ".join(f"{i}" for i in args)
+        )  # Zapisywać mogę tylko str więc konwertuje
+        file.write("\n")
+        file.write(" ".join(f"{k}={v}\n" for k, v in kwargs.items()))
+        result = func(*args, **kwargs)
+        file.write(f"Function returned {result}\n")
+        file.close()
+        return result
+
+    return func_with_wrapper
+
 
 @CreateFunctionWithWrapper
 def ChangeSalary(emp_name, new_salary, is_bonus=False):
-	print("Changing salary for {} to {} as bonus {}".format(emp_name, new_salary, is_bonus))
-	return new_salary
+    print(f"Changing salary for {emp_name} to {new_salary} as bonus {is_bonus}")
+    return new_salary
+
 
 print(ChangeSalary("David", 40000, is_bonus=True))
 print(ChangeSalary("David", 40000, False))

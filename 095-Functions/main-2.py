@@ -1,11 +1,14 @@
+# Gra w Hangman - pełna implementacja z funkcjami choose_word() i play_hangman().
 import random
 
 # Lista słów do zgadywania
 word_list = ["python", "hangman", "programming", "challenge", "developer"]
 
+
 # Funkcja do wyboru losowego słowa
 def choose_word():
     return random.choice(word_list)
+
 
 # Funkcja gry w Hangman
 def play_hangman():
@@ -54,6 +57,7 @@ def play_hangman():
         print("\nCongratulations! You guessed the word:", word)
     else:
         print("\nGame over! The word was:", word)
+
 
 # Uruchomienie gry
 play_hangman()

@@ -1,3 +1,4 @@
+# Import modułów z pakietu przez pełną ścieżkę (import music.a).
 import music.a
 import music.b
 

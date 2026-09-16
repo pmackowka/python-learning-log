@@ -4,13 +4,13 @@
 
 # Jeśli nie - False.
 
-S = {x:x+1 for x in range(10000) if x%23 == 0}
+S = {x: x + 1 for x in range(10000) if x % 23 == 0}
 
-if 7430 in S.keys():
+if 7430 in S:
     print(True)
 else:
     print(False)
 
 print("###")
 
-print(True if 7430 in S.keys() else False)
+print(True if 7430 in S else False)

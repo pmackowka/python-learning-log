@@ -8,12 +8,13 @@
 # O(n**2) -       mnożenie każdego z każdym z elementów na liście
 # O(2**n) -       Fibonacci rekurencyjnie
 
-import math       # poniższy kod wyświetla wykres przedstawiający porównanie różnych złożoności obliczeniowych
-                  # przy użyciu popularnej bibliteki matplotlib
+import math  # poniższy kod wyświetla wykres przedstawiający porównanie różnych złożoności obliczeniowych
+
+# przy użyciu popularnej bibliteki matplotlib
 import matplotlib.pyplot as plt
 
 seria0 = [1] * 10
-seria1 = list(range(1,11))
+seria1 = list(range(1, 11))
 seria2 = [math.log(x) for x in seria1]
 seria3 = [math.log(x) * x for x in seria1]
 seria4 = [x**2 for x in seria1]

@@ -1,4 +1,6 @@
+# Własny iterator łączący trzy listy (produkty x promocje x klienci) w kombinacje.
 import time
+
 
 # Definicja klasy Combinations
 class Combinations:
@@ -31,11 +33,7 @@ class Combinations:
             raise StopIteration  # Koniec iteracji
 
         # Tworzenie aktualnej kombinacji
-        item_to_return = "{} - {} - {}".format(
-            self.products[self.current_product],
-            self.promotions[self.current_promotion],
-            self.customers[self.current_customer],
-        )
+        item_to_return = f"{self.products[self.current_product]} - {self.promotions[self.current_promotion]} - {self.customers[self.current_customer]}"
 
         # Przesunięcie indeksu klientów
         self.current_customer += 1
@@ -44,9 +42,9 @@ class Combinations:
 
 
 # Generowanie danych
-products = ["Product {}".format(i) for i in range(1, 500)]
-promotions = ["Promotion {}".format(i) for i in range(1, 50)]
-customers = ["Customer {}".format(i) for i in range(1, 500)]
+products = [f"Product {i}" for i in range(1, 500)]
+promotions = [f"Promotion {i}" for i in range(1, 50)]
+customers = [f"Customer {i}" for i in range(1, 500)]
 
 # Tworzenie instancji iteratora
 combinations = Combinations(products, promotions, customers)

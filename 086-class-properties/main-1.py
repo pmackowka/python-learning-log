@@ -3,21 +3,24 @@
 # - oraz zmiany ich wartości (setter).
 # Są one stosowane, aby lepiej kontrolować dostęp do atrybutów obiektów i zapewnić enkapsulację.
 
-markaNaPromocji = 'Opel'
+markaNaPromocji = "Opel"
+
 
 class Samochod:
     liczbaSamochodow = 0  # Atrybut klasy
     listaSamochodow = []  # Atrybut klasy
 
-    def __init__(self, marka, model, czyPoduszkaOK, czyLakierOK, czyMechanikaOK, czyNaSprzedaz):
+    def __init__(
+        self, marka, model, czyPoduszkaOK, czyLakierOK, czyMechanikaOK, czyNaSprzedaz
+    ):
         # Metoda inicjalizująca obiekt klasy Samochod
-        self.marka = marka # Atrybuty lub właściwości obiektu
+        self.marka = marka  # Atrybuty lub właściwości obiektu
         self.model = model
         self.czyPoduszkaOK = czyPoduszkaOK
         self.czyLakierOK = czyLakierOK
         self.czyMechanikaOK = czyMechanikaOK
         self.__czyNaSprzedaz = czyNaSprzedaz  # Ukryty atrybut
-        Samochod.liczbaSamochodow += 1 # Jest to atrybut do klasy Samochod, a nie do konkretnej instancji (obiektu). Oznacza to, że wartość tego atrybutu jest wspólna dla wszystkich obiektów klasy.
+        Samochod.liczbaSamochodow += 1  # Jest to atrybut do klasy Samochod, a nie do konkretnej instancji (obiektu). Oznacza to, że wartość tego atrybutu jest wspólna dla wszystkich obiektów klasy.
         Samochod.listaSamochodow.append(self)
 
     def czyUszkodzony(self):
@@ -41,16 +44,23 @@ class Samochod:
     def ustawCzyNaSprzedaz(self, nowyStatusNaSprzedaz):
         if self.marka == markaNaPromocji:
             self.__czyNaSprzedaz = nowyStatusNaSprzedaz
-            print(f"Zmieniono status CzyNaSprzedaz na {nowyStatusNaSprzedaz} dla {self.marka}")
+            print(
+                f"Zmieniono status CzyNaSprzedaz na {nowyStatusNaSprzedaz} dla {self.marka}"
+            )
         else:
-            print(f"Nie można zmienić statusu CzyNaSprzedaz. Promocja dotyczy tylko marki {markaNaPromocji}.")
+            print(
+                f"Nie można zmienić statusu CzyNaSprzedaz. Promocja dotyczy tylko marki {markaNaPromocji}."
+            )
 
     # Właściwość property dla __czyNaSprzedaz
-    czyNaSprzedaz = property(pobierzCzyNaSprzedaz, ustawCzyNaSprzedaz, None, 'Status sprzedaży')
+    czyNaSprzedaz = property(
+        pobierzCzyNaSprzedaz, ustawCzyNaSprzedaz, None, "Status sprzedaży"
+    )
+
 
 # Tworzenie instancji klasy Samochod
-samochod_01 = Samochod('Seat', 'Ibiza', True, True, True, False)
-samochod_02 = Samochod('Opel', 'Astra', True, False, True, True)
+samochod_01 = Samochod("Seat", "Ibiza", True, True, True, False)
+samochod_02 = Samochod("Opel", "Astra", True, False, True, True)
 
 # Wyświetlenie początkowego statusu
 print("Początkowy status samochodów:")

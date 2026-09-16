@@ -24,10 +24,11 @@ Jeśli nie:
 wyświetl informację o zakończeniu działania programu"""
 
 # Lista dostępnych opcji
-options = ['load data', 'export data', 'analyze & predict']
+options = ["load data", "export data", "analyze & predict"]
 
 # Zmienna przechowująca wybór użytkownika
-choice = 'x'
+choice = "x"
+
 
 # Funkcja wyświetlająca opcje i pobierająca wybór użytkownika
 def DisplayOptions(options_list):
@@ -42,6 +43,7 @@ def DisplayOptions(options_list):
         print(f"{idx} - {option}")
     print("Select option above or press enter to exit:")
     return input("> ")
+
 
 # Pętla wykonująca się dopóki choice nie jest pustym napisem
 while choice:

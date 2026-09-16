@@ -1,4 +1,6 @@
+# random.randint() oraz import lokalnego modułu (module_1) z gotową listą losowych liczb.
 import random
+
 import module_1
 
 a = random.randint(a=1, b=10)

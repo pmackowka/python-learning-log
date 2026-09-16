@@ -1,13 +1,18 @@
+"""Ćwiczenie funkcji os.listdir, os.path.join i os.path.isdir na przykładowym katalogu."""
+
 import os
+from pathlib import Path
 
-print('-'*30)
-print(os.listdir(r"/Users/p/Documents/Scripts/Programming/040-recursively-listing-the-contents-of-a-directory/testowy"))
-# ['b.txt', 'a.txt', 'zagniezdzony']
+sample_dir = Path(__file__).parent / "sample_dir"
 
-print('-'*30)
-print(os.path.join(r"/Users/p/Documents/Scripts/Programming/040-recursively-listing-the-contents-of-a-directory/testowy", 'a.txt'))
-# /Users/p/Documents/Scripts/Programming/040-recursively-listing-the-contents-of-a-directory/testowy/a.txt
+print("-" * 30)
+print(os.listdir(sample_dir))
+# ['b.txt', 'a.txt', 'nested']
 
-print('-'*30)
-print(os.path.isdir("/Users/p/Documents/Scripts/Programming/040-recursively-listing-the-contents-of-a-directory/testowy"))
+print("-" * 30)
+print(os.path.join(sample_dir, "a.txt"))
+# .../sample_dir/a.txt
+
+print("-" * 30)
+print(os.path.isdir(sample_dir))
 # True

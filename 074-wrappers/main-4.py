@@ -13,7 +13,7 @@ print(get_sequence(3))
 Wywołanie funkcji rekurencyjnej powoduje teraz wielokrotne uruchomienie wrappera wielokrotnie (!!)"""
 
 import time
-import functools
+
 
 def wrapper_time(a_function):
 
@@ -22,11 +22,14 @@ def wrapper_time(a_function):
         time_start = time.time()
         v = a_function(*args, **kwargs)
         time_stop = time.time()
-        print(">>>>>Function {} executed in {}".format(a_function.__name__, time_stop - time_start))
+        print(
+            f">>>>>Function {a_function.__name__} executed in {time_stop - time_start}"
+        )
 
         return v
 
     return a_wrapped_function
+
 
 @wrapper_time
 def get_sequence(n):
@@ -36,7 +39,8 @@ def get_sequence(n):
     else:
         v = 0
         for i in range(n):
-            v += 1 + (get_sequence(i - 1) + get_sequence(i))/2
+            v += 1 + (get_sequence(i - 1) + get_sequence(i)) / 2
         return v
+
 
 print(get_sequence(10))

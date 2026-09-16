@@ -19,21 +19,18 @@ wewnątrz pętli for dodaj blok try/except, który w przypadku błędu zakończy
 zakończ pętlę for poleceniem, które wykona się tylko wtedy gdy pętla nie została w żaden sposób przerwana. Wyświetl tu komunikat o powodzeniu"""
 
 import os  # Import modułu do operacji na systemie plików
+import tempfile  # Katalog tymczasowy - pobrane strony nie trafiają do repo
 import urllib.request  # Import modułu do pobierania stron www
 
 # Ścieżka do katalogu, gdzie będą zapisywane pobrane strony
-data_dir = r"/Users/p/Documents/Scripts/Programming/058-else-in-loops"  # Upewnij się, że katalog istnieje
+data_dir = tempfile.gettempdir()
 
 # Lista stron do pobrania
 pages = [
-    {'name': 'google cloud', 'url': 'https://cloud.google.com/gcp'},
-    {'name': 'nonexistent', 'url': 'http://abc.cde.fgh.ijk.pl/'},  # Strona nie istnieje
-    {'name': 'microsoft azure', 'url': 'https://azure.microsoft.com/pl-pl'}
+    {"name": "google cloud", "url": "https://cloud.google.com/gcp"},
+    {"name": "nonexistent", "url": "http://abc.cde.fgh.ijk.pl/"},  # Strona nie istnieje
+    {"name": "microsoft azure", "url": "https://azure.microsoft.com/pl-pl"},
 ]
-
-# Tworzymy katalog, jeśli nie istnieje
-if not os.path.exists(data_dir):
-    os.makedirs(data_dir)
 
 # Iterujemy przez listę stron
 for page in pages:
@@ -42,7 +39,7 @@ for page in pages:
         path = os.path.join(data_dir, f"{page['name']}.html")
 
         # Pobieramy stronę i zapisujemy ją w określonej ścieżce
-        urllib.request.urlretrieve(page['url'], path)
+        urllib.request.urlretrieve(page["url"], path)
         print(f"Strona {page['name']} została zapisana jako {path}")
     except Exception as e:  # Obsługa błędów
         print(f"Błąd podczas pobierania strony {page['name']}: {e}")
@@ -50,4 +47,3 @@ for page in pages:
 else:
     # Wykonuje się tylko, gdy pętla zakończyła się bez przerwań
     print("Wszystkie strony zostały pomyślnie pobrane!")
-

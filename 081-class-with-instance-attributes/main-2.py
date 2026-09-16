@@ -1,4 +1,4 @@
-'''LAB - Klasy i atrybuty instancji klasy
+"""LAB - Klasy i atrybuty instancji klasy
 Szef cukierni w której pracujesz poprosił Cię o napisanie programu, który koniecznie ma działać obiektowo!
 
 Zaczynamy od zdefiniowania klasy Cake, która ma posiadać atrybuty:
@@ -39,20 +39,23 @@ UWAGA: w kolejnych lekcjach i kolejnych zadaniach będę kontynuował temat cuki
 "Firma przewozowa - taxi bagażowe"
 "Biuro podróży"
 
-'''
+"""
+
 
 class Ciasto:
-    def __init__(self, nazwa, rodzaj, smak, dodatki=None, nadzienie=''):
+    def __init__(self, nazwa, rodzaj, smak, dodatki=None, nadzienie=""):
         self.nazwa = nazwa
         self.rodzaj = rodzaj
         self.smak = smak  # Główny smak
         self.dodatki = dodatki if dodatki else []  # Lista dodatków, domyślnie pusta
-        self.nadzienie = nadzienie # Nadzienie, domyślnie pusty string
+        self.nadzienie = nadzienie  # Nadzienie, domyślnie pusty string
 
     def pokaz_informacje(self):
         # Metoda wyświetlająca szczegóły o wypieku
-        print(f"{self.nazwa} - ({self.rodzaj}) główny smak: {self.smak} "
-              f"z dodatkami: {self.dodatki}, nadziane: {self.nadzienie}")
+        print(
+            f"{self.nazwa} - ({self.rodzaj}) główny smak: {self.smak} "
+            f"z dodatkami: {self.dodatki}, nadziane: {self.nadzienie}"
+        )
 
 
 # Tworzenie instancji klasy Ciasto
@@ -61,21 +64,17 @@ ciasto_1 = Ciasto(
     rodzaj="tort",
     smak="wanilia",
     dodatki=["czekolada", "orzechy"],
-    nadzienie="krem"
+    nadzienie="krem",
 )
 
 ciasto_2 = Ciasto(
     nazwa="Muffinka Czekoladowa",
     rodzaj="muffinka",
     smak="czekolada",
-    dodatki=["czekolada"]
+    dodatki=["czekolada"],
 )
 
-ciasto_3 = Ciasto(
-    nazwa="Super Słodka Beza",
-    rodzaj="beza",
-    smak="bardzo słodki"
-)
+ciasto_3 = Ciasto(nazwa="Super Słodka Beza", rodzaj="beza", smak="bardzo słodki")
 
 oferta_cukierni = [ciasto_1, ciasto_2, ciasto_3]
 

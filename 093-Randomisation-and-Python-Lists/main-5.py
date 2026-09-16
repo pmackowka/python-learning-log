@@ -1,3 +1,4 @@
+# random.seed(), random.choice(), losowy indeks przez randint() - wybór losowego przyjaciela z listy.
 friends = ["Rolf", "Anne", "Charlie", "Jen", "Bob", "Adam", "Becky", "Harry"]
 
 import random

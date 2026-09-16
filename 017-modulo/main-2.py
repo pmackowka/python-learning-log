@@ -3,8 +3,10 @@
 a = 123454321
 b = 11111
 
+
 def czy_podzielna(liczba_a, liczba_b):
-	return (liczba_a % liczba_b) == 0
+    return (liczba_a % liczba_b) == 0
+
 
 print(czy_podzielna(a, b))
 

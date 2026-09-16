@@ -3,11 +3,11 @@
 # Stwórz taki model i umieść stringa "długopis"
 # w środkowej przegródce środkowej szuflady.
 
-szafka = [[[],[],[]],[[],[],[]],[[],[],[]]]
+szafka = [[[], [], []], [[], [], []], [[], [], []]]
 # lista szafka zawiera trzy zagnieżdżone listy, a każda z nich kolejne trzy zagnieżdżone listy
-szafka[1][1] = 'długopis'
+szafka[1][1] = "długopis"
 # wpisanie stringa do środkowej listy (reprezentującej skrytkę)
 # w środkowej liście (reprezentującej szufladę) w liście szafka
 
-for a in szafka:       # pętla drukująca po kolei trzy listy będące elementami listy szafka
+for a in szafka:  # pętla drukująca po kolei trzy listy będące elementami listy szafka
     print(a)

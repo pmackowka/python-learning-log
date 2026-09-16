@@ -1,6 +1,7 @@
 # Metody instancji, klasy i statyczne
 
-promotionBrand = 'Opel'
+promotionBrand = "Opel"
+
 
 class Car:
     carCount = 0  # Class attribute
@@ -40,26 +41,28 @@ class Car:
             self.__isForSale = newIsForSaleStatus
             print(f"Changed IsForSale status to {newIsForSaleStatus} for {self.brand}")
         else:
-            print(f"Cannot change IsForSale status. Promotion only applies to {promotionBrand} brand.")
+            print(
+                f"Cannot change IsForSale status. Promotion only applies to {promotionBrand} brand."
+            )
 
     # Property for __isForSale
-    isForSale = property(getIsForSale, setIsForSale, None, 'Sale status')
+    isForSale = property(getIsForSale, setIsForSale, None, "Sale status")
 
-    @classmethod # Metoda na poziomie klasy
+    @classmethod  # Metoda na poziomie klasy
     def ReadFromText(cls, aText):
-        aNewCar = cls(*aText.split(':'))
+        aNewCar = cls(*aText.split(":"))
         return aNewCar
 
-    @staticmethod # Metoda niezalezna od klasy
+    @staticmethod  # Metoda niezalezna od klasy
     def Convert_KM_KW(KM):
         return KM * 0.735
 
-    @staticmethod # Metoda niezalezna od klasy
+    @staticmethod  # Metoda niezalezna od klasy
     def Convert_KW_KM(KW):
         return KW * 1.36
 
 
-lineOfText = 'Renault:Megane:True:True:False:False'
+lineOfText = "Renault:Megane:True:True:False:False"
 car_03 = Car.ReadFromText(lineOfText)
 car_03.showInfo()
 
@@ -69,12 +72,5 @@ car_03.showInfo()
 # Mechanics - OK - False
 # FOR SALE - False
 
-print('converting 120 KM to KW', Car.Convert_KM_KW(120))
-print('converting 90 KW to KM', Car.Convert_KW_KM(90))
-
-
-
-
-
-
-
+print("converting 120 KM to KW", Car.Convert_KM_KW(120))
+print("converting 90 KW to KM", Car.Convert_KW_KM(90))

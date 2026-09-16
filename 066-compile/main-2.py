@@ -13,7 +13,7 @@ exec(source)
 # - `source`: kod do kompilacji.
 # - `'internal variable source'`: nazwa pliku lub źródła, przydatna w debugowaniu.
 # - `'exec'`: tryb wykonania kodu (możliwość wykonania wielu instrukcji).
-sourceCompiled = compile(source, 'internal variable source', 'exec')
+sourceCompiled = compile(source, "internal variable source", "exec")
 
 # Wykonujemy skompilowany kod. Jest to równoważne wywołaniu `exec` na kodzie w postaci tekstowej.
 exec(sourceCompiled)

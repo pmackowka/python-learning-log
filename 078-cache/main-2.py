@@ -1,19 +1,22 @@
-import time
+# Jak main-1.py, ale z @functools.lru_cache - drastyczne przyspieszenie dzięki cache'owaniu wyników.
 import functools
+import time
 
-@functools.lru_cache()
+
+@functools.lru_cache
 def Factorial(n):
 
-	time.sleep(0.1)
+    time.sleep(0.1)
 
-	if n == 1:
-		return 1
-	else:
-		return n * Factorial(n - 1)
+    if n == 1:
+        return 1
+    else:
+        return n * Factorial(n - 1)
+
 
 start = time.time()
 for i in range(1, 11):
-	print('{}! = {}'.format(i, Factorial(i)))
+    print(f"{i}! = {Factorial(i)}")
 
 stop = time.time()
 

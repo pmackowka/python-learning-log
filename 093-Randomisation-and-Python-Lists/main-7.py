@@ -1,36 +1,39 @@
+# Gra kamień-papier-nożyce - input(), walidacja wyboru, quit() przy błędnym wejściu, ASCII-art.
 import random
 
-rock = '''
+rock = """
     _______
 ---'   ____)
       (_____)
       (_____)
       (____)
 ---.__(___)
-'''
+"""
 
-paper = '''
+paper = """
     _______
 ---'   ____)____
           ______)
           _______)
          _______)
 ---.__________)
-'''
+"""
 
-scissors = '''
+scissors = """
     _______
 ---'   ____)____
           ______)
        __________)
       (____)
 ---.__(___)
-'''
+"""
 
 choices = [rock, paper, scissors]
 
 try:
-    user = int(input("What do you choose? Type 0 for Rock, 1 for Paper, 2 for Scissors.\n"))
+    user = int(
+        input("What do you choose? Type 0 for Rock, 1 for Paper, 2 for Scissors.\n")
+    )
     if user not in [0, 1, 2]:
         print("Invalid choice! Please choose 0 (Rock), 1 (Paper), or 2 (Scissors).")
         quit()
@@ -44,11 +47,11 @@ print(f"\nYou chose:\n{choices[user]}")
 print("The computer chose:")
 print(choices[computer])
 
-if ((user + 1) % 3 == computer):
+if (user + 1) % 3 == computer:
     print("You lost!")
 elif user == computer:
     print("It's a tie!")
-else: 
+else:
     print("You win!")
 
 print("\nThank you for playing!")

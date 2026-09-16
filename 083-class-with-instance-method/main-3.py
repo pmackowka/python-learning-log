@@ -1,5 +1,5 @@
+# Klasa Ciasto z metodami instancji (pokaz_informacje, ustaw_nadzienie, dodaj_dodatki).
 class Ciasto:
-
     def __init__(self, nazwa, rodzaj, smak, dodatki, nadzienie):
         self.nazwa = nazwa
         self.rodzaj = rodzaj
@@ -8,16 +8,16 @@ class Ciasto:
         self.nadzienie = nadzienie
 
     def pokaz_informacje(self):
-        print("{}".format(self.nazwa.upper()))
-        print("Rodzaj:  {}".format(self.rodzaj))
-        print("Smak:    {}".format(self.smak))
+        print(f"{self.nazwa.upper()}")
+        print(f"Rodzaj:  {self.rodzaj}")
+        print(f"Smak:    {self.smak}")
         if len(self.dodatki) > 0:
             print("Dodatki:")
             for dodatek in self.dodatki:
-                print("\t{}".format(dodatek))
+                print(f"\t{dodatek}")
         if len(self.nadzienie) > 0:
-            print("Nadzienie: {}".format(self.nadzienie))
-        print('-' * 20)
+            print(f"Nadzienie: {self.nadzienie}")
+        print("-" * 20)
 
     def ustaw_nadzienie(self, nadzienie):
         self.nadzienie = nadzienie
@@ -25,21 +25,24 @@ class Ciasto:
     def dodaj_dodatki(self, nowe_dodatki):
         self.dodatki.extend(nowe_dodatki)
 
-ciasto_1 = Ciasto('Ciasto Waniliowe', 'ciasto', 'waniliowe', ['czekolada', 'orzechy'], 'krem')
-ciasto_2 = Ciasto('Muffinka Czekoladowa', 'muffinka', 'czekoladowy', ['czekolada'], '')
-ciasto_3 = Ciasto('Beza Super Słodka', 'beza', 'bardzo słodki', [], '')
+
+ciasto_1 = Ciasto(
+    "Ciasto Waniliowe", "ciasto", "waniliowe", ["czekolada", "orzechy"], "krem"
+)
+ciasto_2 = Ciasto("Muffinka Czekoladowa", "muffinka", "czekoladowy", ["czekolada"], "")
+ciasto_3 = Ciasto("Beza Super Słodka", "beza", "bardzo słodki", [], "")
 
 oferta_cukierni = []
 oferta_cukierni.append(ciasto_1)
 oferta_cukierni.append(ciasto_2)
 oferta_cukierni.append(ciasto_3)
 
-ciasto_2.ustaw_nadzienie('krem waniliowy')
-ciasto_3.dodaj_dodatki(['proszek kakaowy', 'wiórki kokosowe'])
+ciasto_2.ustaw_nadzienie("krem waniliowy")
+ciasto_3.dodaj_dodatki(["proszek kakaowy", "wiórki kokosowe"])
 
 print(oferta_cukierni)
 # [<__main__.Ciasto object at 0x1028bcfd0>, <__main__.Ciasto object at 0x1028bcfa0>, <__main__.Ciasto object at 0x1028bcf10>]
-print('-' * 30)
+print("-" * 30)
 
 
 print("Dziś w naszej ofercie:")

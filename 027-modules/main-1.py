@@ -7,8 +7,10 @@ from drukarka import wydrukuj_imie as wydrukuj_imie_modul
 from drukarka import wydrukuj_imie as wydrukuj_imie_z_drukarki
 from kserokopiarka import zrob_ksero
 
+
 def wydrukuj_imie(imie):
     print(imie)
+
 
 wydrukuj_imie("Lalala")
 wydrukuj_imie_modul("Lalala_modul")

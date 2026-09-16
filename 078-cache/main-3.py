@@ -1,21 +1,24 @@
-'''LAB - Optymalizacja funkcji przez cache
-Oto przykład niezbyt dobrze napisanej funkcji wyliczającej wartość w ciągu Finobacciego:'''
+"""LAB - Optymalizacja funkcji przez cache
+Oto przykład niezbyt dobrze napisanej funkcji wyliczającej wartość w ciągu Finobacciego:"""
 
 import time
 from functools import lru_cache
+
 
 # Funkcja pierwotna, nieoptymalna
 def fib_original(n):
     if n < 2:
         return n
-    return fib_original(n-1) + fib_original(n-2)
+    return fib_original(n - 1) + fib_original(n - 2)
+
 
 # Zoptymalizowana funkcja z wykorzystaniem lru_cache
 @lru_cache(maxsize=100)
 def fib_cached(n):
     if n < 2:
         return n
-    return fib_cached(n-1) + fib_cached(n-2)
+    return fib_cached(n - 1) + fib_cached(n - 2)
+
 
 # Test pomiaru czasu
 def measure_execution_time(func, max_iterations):
@@ -27,6 +30,7 @@ def measure_execution_time(func, max_iterations):
     total_time = time.time() - start
     print(f"Total time: {total_time:.6f} seconds")
     return total_time
+
 
 print("Testing original function...")
 try:

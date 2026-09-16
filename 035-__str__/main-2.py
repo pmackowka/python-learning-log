@@ -1,7 +1,8 @@
+# Różnica między __str__ (print) a __repr__ (repr()) na tej samej klasie.
 class Person:
     def __init__(self, name, age):
         self.name = name  # Przechowywanie imienia osoby
-        self.age = age    # Przechowywanie wieku osoby
+        self.age = age  # Przechowywanie wieku osoby
 
     def __str__(self):
         # Przyjazna dla człowieka reprezentacja obiektu
@@ -10,6 +11,7 @@ class Person:
     def __repr__(self):
         # Formalna, dokładna reprezentacja obiektu
         return f"Person(name='{self.name}', age={self.age})"
+
 
 # Tworzenie instancji obiektu
 p = Person("Anna", 30)

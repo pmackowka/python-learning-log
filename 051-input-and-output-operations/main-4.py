@@ -1,21 +1,25 @@
-'''Pharma A, Vitamin C,100
+# Wczytywanie i walidacja wierszy pliku CSV z zamówieniami (bez modułu csv, na samym split).
+# Poniższy string to podgląd zawartości orders.csv.
+"""Pharma A, Vitamin C,100
 Drugstore XYZ,Penicilin, 20, pills
 Drugstore ABC,Aspirin,60
-Pharma X,Montelukast,10'''
+Pharma X,Montelukast,10"""
 
-file_path = r'/Users/p/Documents/VSC/Programming/051-input-and-output-operations/orders.csv'
+from pathlib import Path
+
+file_path = Path(__file__).parent / "orders.csv"
 
 
-with open(file_path,"r") as file:
-
+with open(file_path, "r") as file:
     for line in file:
-
-        line = line.replace('\n','')
-        order = line.split(',')
+        line = line.replace("\n", "")
+        order = line.split(",")
 
         if len(order) == 3:
-            print('Order from drugstore "%s", item "%s", amount %s' %
-                  (order[0],order[1],order[2]))
+            print(
+                'Order from drugstore "%s", item "%s", amount %s'
+                % (order[0], order[1], order[2])
+            )
         else:
             print("Line %s malformed!!!" % line)
 

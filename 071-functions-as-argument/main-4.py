@@ -1,22 +1,27 @@
+# Funkcja jako argument (how) generująca listę wartości przez zastosowanie jej do x_table.
 def double(x):
-    return 2 *x
+    return 2 * x
+
 
 def square(x):
     return x**2
 
+
 def negative(x):
     return -x
 
+
 def div2(x):
-    return x/2
+    return x / 2
 
 
 def generate_values(how, x_table):
     value_list = []
     for x in x_table:
-        value_list.append(how(x)) # double(0), double(1)
+        value_list.append(how(x))  # double(0), double(1)
 
-    return value_list # [double(0), double(1)]
+    return value_list  # [double(0), double(1)]
+
 
 x_table = list(range(11))
 

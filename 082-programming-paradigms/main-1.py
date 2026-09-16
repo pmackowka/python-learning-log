@@ -3,9 +3,11 @@
 def calculate_area(length, width):
     return length * width
 
+
 def display_area(length, width):
     area = calculate_area(length, width)
     print(f"Pole prostokąta o wymiarach {length}x{width} wynosi {area}.")
+
 
 length = 5
 width = 3
@@ -23,6 +25,7 @@ class Rectangle:
     def area(self):
         return self.length * self.width
 
+
 rect = Rectangle(5, 3)
 print(rect.area())
 # 15
@@ -32,7 +35,7 @@ print(rect.area())
 # Oparte na czystych funkcjach, niemutowalnych danych i funkcjach wyższego rzędu.
 # Funkcjonalne: użycie map i lambda do przetwarzania danych
 numbers = [1, 2, 3, 4]
-squared = list(map(lambda x: x ** 2, numbers))  # Każda liczba podniesiona do kwadratu
+squared = list(map(lambda x: x**2, numbers))  # Każda liczba podniesiona do kwadratu
 print(squared)  # Wynik: [1, 4, 9, 16]
 
 
@@ -57,17 +60,21 @@ print(even_numbers)  # Wynik: [2, 4, 6]
 # Służy do wykonywania operacji niezależnych od siebie w sposób współbieżny.
 import asyncio
 
+
 # Asynchroniczne: wykonanie dwóch zadań jednocześnie
 async def say_hello():
     await asyncio.sleep(1)
     print("Hello")
 
+
 async def say_world():
     await asyncio.sleep(1)
     print("World")
 
+
 async def main():
     await asyncio.gather(say_hello(), say_world())
+
 
 asyncio.run(main())
 # Wynik: "Hello" i "World" pojawiają się niemal jednocześnie

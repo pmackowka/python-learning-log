@@ -1,8 +1,14 @@
-pytest # pytest: Testy jednostkowe, funkcyjne i integracyjne
-mypy # mypy: Statyczne typowanie
-matplotlib
-requests
-# pandas
+# Instalacja: python3 -m pip install -r requirements.txt
 
-# python3 -m pip install -r requirements.txt
-# python3 pip install --upgrade pip
+# narzędzia deweloperskie
+pytest  # testy jednostkowe, funkcyjne i integracyjne
+mypy  # statyczne typowanie
+
+# biblioteki używane w poszczególnych ćwiczeniach
+beautifulsoup4  # web scraping (073-libraries)
+colorama  # kolorowanie tekstu w terminalu (045-pip)
+matplotlib  # wykresy (091-statistics-data-types-charts)
+numpy  # obliczenia numeryczne (073-libraries, 091-statistics-data-types-charts)
+pandas  # analiza danych (073-libraries, 091-statistics-data-types-charts)
+requests  # zapytania HTTP (073-libraries, 076/077-sendmail)
+selenium  # automatyzacja przeglądarki (073-libraries)

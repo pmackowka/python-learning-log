@@ -1,9 +1,10 @@
+# Funkcja z parametrem bez wartości domyślnej vs. z wartością domyślną - ASCII-art zwierząt.
 def PrintAnimal(animal):
     # this function prints a cat, bear or bat ascii-art
-    txt_cat = r'''
+    txt_cat = r"""
 |\---/|
 | o_o |
- \_^_/'''
+ \_^_/"""
     txt_bear = r'''
 /  \.-"""-./  \
 \    -   -    /
@@ -11,42 +12,43 @@ def PrintAnimal(animal):
  \  .-'"'-.  /
   '-\__Y__/-'
      `---`'''
-    txt_bat = r'''
+    txt_bat = r"""
    /\                 /\
   / \'._   (\_/)   _.'/ \
  /_.''._'--('.')--'_.''._\
  | \_ / `;=/ " \=;` \ _/ |
   \/ `\__|`\___/`|__/`  \/
           \(/|\)/
-     '''
+     """
 
-    if animal == 'cat':
+    if animal == "cat":
         print(txt_cat)
-    elif animal == 'bear':
+    elif animal == "bear":
         print(txt_bear)
-    elif animal == 'bat':
+    elif animal == "bat":
         print(txt_bat)
     else:
-        print("Cannot print '%s'. Correct values for the parameter are: cat, bear, bat" % animal)
-
-    return
+        print(
+            "Cannot print '%s'. Correct values for the parameter are: cat, bear, bat"
+            % animal
+        )
 
 
 # PrintAnimal('cat')
 # PrintAnimal(animal='bear')
-PrintAnimal(animal='bat')
-PrintAnimal('unicorn')
+PrintAnimal(animal="bat")
+PrintAnimal("unicorn")
 
 
-print('----------------')
+print("----------------")
 
 
-def PrintAnimal(animal = ''):
+def PrintAnimal(animal=""):
     # this function prints a cat, bear or bat ascii-art
-    txt_cat = r'''
+    txt_cat = r"""
 |\---/|
 | o_o |
- \_^_/'''
+ \_^_/"""
     txt_bear = r'''
 /  \.-"""-./  \
 \    -   -    /
@@ -54,23 +56,23 @@ def PrintAnimal(animal = ''):
  \  .-'"'-.  /
   '-\__Y__/-'
      `---`'''
-    txt_bat = r'''
+    txt_bat = r"""
    /\                 /\
   / \'._   (\_/)   _.'/ \
  /_.''._'--('.')--'_.''._\
  | \_ / `;=/ " \=;` \ _/ |
   \/ `\__|`\___/`|__/`  \/
           \(/|\)/
-     '''
+     """
 
-    if animal == 'cat':
+    if animal == "cat":
         print(txt_cat)
-    elif animal == 'bear':
+    elif animal == "bear":
         print(txt_bear)
-    elif animal == 'bat':
+    elif animal == "bat":
         print(txt_bat)
     else:
-        print("Cannot print '%s'. Correct values for the parameter are: cat, bear, bat" % animal)
-
-    return
-
+        print(
+            "Cannot print '%s'. Correct values for the parameter are: cat, bear, bat"
+            % animal
+        )

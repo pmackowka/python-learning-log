@@ -2,23 +2,26 @@
 # Skupia się na podziale programu na funkcje i instrukcje wykonywane sekwencyjnie.
 
 car_01 = {
-'carBrand':'Seat',
-'carModel':'Ibiza',
-'carIsAirBagOK':True,
-'carIsPaintingOK':True,
-'carIsMechanicOK':True
+    "carBrand": "Seat",
+    "carModel": "Ibiza",
+    "carIsAirBagOK": True,
+    "carIsPaintingOK": True,
+    "carIsMechanicOK": True,
 }
 
 car_02 = {
-'carBrand':'Opel',
-'carModel':'Astra',
-'carIsAirBagOK':True,
-'carIsPaintingOK':False,
-'carIsMechanicOK':True
+    "carBrand": "Opel",
+    "carModel": "Astra",
+    "carIsAirBagOK": True,
+    "carIsPaintingOK": False,
+    "carIsMechanicOK": True,
 }
 
+
 def isCarDamaged(aCar):
-	return not (aCar['carIsAirBagOK'] and aCar['carIsPaintingOK'] and aCar['carIsMechanicOK'])
+    return not (
+        aCar["carIsAirBagOK"] and aCar["carIsPaintingOK"] and aCar["carIsMechanicOK"]
+    )
 
 
 # print(isCarDamaged(car_01))
@@ -26,4 +29,8 @@ def isCarDamaged(aCar):
 
 cars = [car_01, car_02]
 for c in cars:
-	print("Samochód {} {} ma status {}".format(c['carBrand'], c['carModel'], isCarDamaged(c)))
+    print(
+        "Samochód {} {} ma status {}".format(
+            c["carBrand"], c["carModel"], isCarDamaged(c)
+        )
+    )

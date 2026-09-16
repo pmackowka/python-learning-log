@@ -1,17 +1,20 @@
+# Rekurencyjna silnia z time.sleep() - baseline bez cache'owania (każde wywołanie jest wolne).
 import time
+
 
 def Factorial(n):
 
-	time.sleep(0.1)
+    time.sleep(0.1)
 
-	if n == 1:
-		return 1
-	else:
-		return n * Factorial(n - 1)
+    if n == 1:
+        return 1
+    else:
+        return n * Factorial(n - 1)
+
 
 start = time.time()
 for i in range(1, 11):
-	print('{}! = {}'.format(i, Factorial(i)))
+    print(f"{i}! = {Factorial(i)}")
 
 stop = time.time()
 

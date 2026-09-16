@@ -1,3 +1,4 @@
+# Kalkulator ceny pizzy - input() rozmiaru i dodatków, quit() przy błędnym rozmiarze.
 bill = 0
 
 size = input("Enter the size of the pizza (S, M, L): ").strip().upper()

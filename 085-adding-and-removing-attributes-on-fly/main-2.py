@@ -1,4 +1,4 @@
-'''LAB - Dodawanie i ukrywanie atrybutów
+"""LAB - Dodawanie i ukrywanie atrybutów
 W tym zadaniu nadal pracujemy nad klasą "Ciastko"
 
 Dodaj do klasy Cake ukryty atrybut gluten_free. (To jedna z ważniejszych informacji o wypiekach, dlatego staramy się, żeby ten atrybut można było ustawić tylko raz podczas tworzenia obiektu, dzięki czemu później podczas pracy programu nie zmienimy przypadkowo wartości w tym polu)
@@ -15,7 +15,8 @@ Czy po uruchomieniu masz błąd? Dlaczego? Korzystając z polecenia dir(cake03) 
 
 Zmień wartość atrybutu korzystając ze specjalnie i automatycznie utworzonego atrybutu o specyficznej budowie tak, jak to było zrobione w materiale video
 
-Wyświetl ponownie informacje o cake03 (beza) - czy teraz stała się wyrobem glutenowym?'''
+Wyświetl ponownie informacje o cake03 (beza) - czy teraz stała się wyrobem glutenowym?"""
+
 
 class Ciasto:
     def __init__(self, nazwa, rodzaj, smak, dodatki, nadzienie, bezglutenowe):
@@ -24,7 +25,9 @@ class Ciasto:
         self.smak = smak
         self.dodatki = dodatki
         self.nadzienie = nadzienie
-        self.__bezglutenowe = bezglutenowe # Ukryty atrybut przechowujący informację o glutenie
+        self.__bezglutenowe = (
+            bezglutenowe  # Ukryty atrybut przechowujący informację o glutenie
+        )
 
     def pokaz_informacje(self):
         print(f"Ciasto: {self.nazwa}")
@@ -34,6 +37,7 @@ class Ciasto:
         print(f"Nadzienie: {self.nadzienie if self.nadzienie else 'Brak'}")
         print(f"Bezglutenowe: {'Tak' if self.__bezglutenowe else 'Nie'}")
         print("-------------------------------")
+
 
 ciasto01 = Ciasto("Sernik", "sernik", "słodki", ["rodzynki"], None, False)
 ciasto02 = Ciasto("Szarlotka", "ciasto owocowe", "jabłkowy", None, None, False)

@@ -1,11 +1,11 @@
+# Pętla while zliczająca w górę i w dół, aż do przekroczenia granicy.
 i = 1
 imax = 10
 
 while i <= imax:
-	print(i, "I Like Python")
-	i +=1
-else:
-	print(i)
+    print(i, "I Like Python")
+    i += 1
+print(i)
 
 # 1 I Like Python
 # 2 I Like Python
@@ -23,10 +23,9 @@ i = 10
 imin = 0
 
 while i >= imin:
-	print(i, "I Like Python")
-	i -=1
-else:
-	print(i)
+    print(i, "I Like Python")
+    i -= 1
+print(i)
 
 # 10 I Like Python
 # 9 I Like Python

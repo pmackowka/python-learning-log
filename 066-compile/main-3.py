@@ -1,16 +1,12 @@
-'''LAB - Funkcja compile()
+"""LAB - Funkcja compile()
 Nadal pracujemy w zwariowanym ośrodku badawczym. Ponieważ profesorowie mieli problem z umieszczaniem swoich skryptów w odpowiednich katalogach, od tej pory dostarczają tylko wzory, które podlegają przeliczeniom. W tym zadaniu wielokrotnie wyliczysz wartości wyliczane wzorami, a następnie porównasz czasy wykonania w zależności od sposobu interpretacji kodu.
 
 1. Zaimportuj moduł math i time
-2. Utwórz listę ze wzorami:'''
+2. Utwórz listę ze wzorami:"""
 
-import math
 import time
 
-formulas_list = [
-    "abs(x**3 - x**0.5)",
-    "abs(math.sin(x) * x**2)"
-]
+formulas_list = ["abs(x**3 - x**0.5)", "abs(math.sin(x) * x**2)"]
 
 argument_list = []
 for i in range(1000000):
@@ -19,8 +15,7 @@ for i in range(1000000):
 # Pierwsze podejście: Bez optymalizacji (dynamiczne wyliczanie)
 print("Wykonanie bez optymalizacji:")
 for formula in formulas_list:
-
-    results_list = []  
+    results_list = []
     print(f"Pracuję nad formułą: {formula}")
 
     start = time.time()

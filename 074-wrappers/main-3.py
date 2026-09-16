@@ -1,4 +1,4 @@
-'''LAB - Wrapper dla funkcji, dekorowanie funkcji
+"""LAB - Wrapper dla funkcji, dekorowanie funkcji
 Pracujesz w  SZIN (Super Zwariowany Instytut Naukowy).  W SZIN dużą wagę przykłada się do tego, aby funkcje działały szybko! Dlatego powstał pomysł, aby każda strategiczna funkcja posiadała wrapper, który zmierzy czas wykonania danej funkcji.
 
 Oto funkcja, dla której trzeba stworzyć wrapper:
@@ -32,9 +32,10 @@ Zwróć funkcję a_wrapped_function
 Funkcja tworząca wrapper jest gotowa - teraz trzeba jej użyć:
 Do wrapper_get_sequence przypisz wynik funkcji wrapper_time wywołanej z argumentem wskazującym na oryginalną funkcję get_sequence
 Uruchom tą funkcję wyświetlając jej wynik, np. tak:
-print(wrapper_get_sequence(18))'''
+print(wrapper_get_sequence(18))"""
 
 import time
+
 
 def wrapper_time(fun):
 
@@ -43,7 +44,7 @@ def wrapper_time(fun):
         time_start = time.time()
         v = fun(*args, **kwargs)
         time_stop = time.time()
-        print(">>>>>Function {} executed in {}".format(fun.__name__, time_stop - time_start))
+        print(f">>>>>Function {fun.__name__} executed in {time_stop - time_start}")
 
         return v
 
@@ -57,8 +58,9 @@ def get_sequence(n):
     else:
         v = 0
         for i in range(n):
-            v += 1 + (get_sequence(i - 1) + get_sequence(i))/2
+            v += 1 + (get_sequence(i - 1) + get_sequence(i)) / 2
         return v
+
 
 # print(get_sequence(10))
 

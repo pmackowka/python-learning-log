@@ -1,14 +1,22 @@
 # Pytanie 34 - napisz fragment kodu, w którym zobrazujesz użycie słowa kluczowego assert.
 # Wyjaśnij jaka jest rola testów jednostkowych i czym charakteryzuje się dobry test jednostkowy.
 
-def dodawanie(a,b):                       	# definicja funkcji dodającej dwie wartości
+
+def dodawanie(a, b):  # definicja funkcji dodającej dwie wartości
     return a + b
 
-def test_dodawanie_intow():               	# funkcja testująca funkcję dodawanie
-    assert dodawanie(2,3) == 4           	# sprawdzenie czy funkcja dodawanie dla wartości 2 i 3 zwróci 5
 
-def test_dodawanie_stringow():            	# inna funkcja testująca funkcję dodawanie
-    assert dodawanie('a', 'b') == 'ab'   	# sprawdzenie czy funkcja dodawanie dla wartości 'a' i 'b' zwróci 'ab'
+def test_dodawanie_intow():  # funkcja testująca funkcję dodawanie
+    assert (
+        dodawanie(2, 3) == 4
+    )  # sprawdzenie czy funkcja dodawanie dla wartości 2 i 3 zwróci 5
+
+
+def test_dodawanie_stringow():  # inna funkcja testująca funkcję dodawanie
+    assert (
+        dodawanie("a", "b") == "ab"
+    )  # sprawdzenie czy funkcja dodawanie dla wartości 'a' i 'b' zwróci 'ab'
+
 
 # pytest    - framework do uruchamiania testów, którego używaliśmy w tym filmie.
 # aby go zainstalowac nalezy w linii komend wpisać "pip install pytest"
@@ -16,5 +24,5 @@ def test_dodawanie_stringow():            	# inna funkcja testująca funkcję do
 
 # unittest - moduł biblioteki standardowej służący do uruchamiania testów, działa podobnie jak pytest
 
-test_dodawanie_intow() # AssertionError
+test_dodawanie_intow()  # AssertionError
 test_dodawanie_stringow()

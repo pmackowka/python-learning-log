@@ -6,8 +6,8 @@
 L = [0, 1, 2, 3]
 K = L[:]
 
-L[1] = 'jeden'
-K[1] = 'JEDEN'
+L[1] = "jeden"
+K[1] = "JEDEN"
 
 print(L)
 print(K)

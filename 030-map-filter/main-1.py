@@ -4,12 +4,19 @@
 # - użyj funkcji map() aby przerobić nazwiska tak, żeby wszystkie były zapisane poprawnie
 # z wielkimi literami tylko na początku imienia i nazwiska.
 
-nazwiska = ['jan kot', 18, 'ANNA KRÓL', 'jÓzef BYK', ['nie', 'wasza','sprawa'], 'ROBERT wąŻ']
+nazwiska = [
+    "jan kot",
+    18,
+    "ANNA KRÓL",
+    "jÓzef BYK",
+    ["nie", "wasza", "sprawa"],
+    "ROBERT wąŻ",
+]
 
 # filter(funkcja,sekwencja)
 # elementy z listy nazwiska przekazywane są do lambdy, która sprawdza czy ich typ to string
 # jeśli tak, to element zostaje dodany do listy nazwiska_wyczyszczone
-nazwiska_wyczyszczone = list(filter(lambda x:type(x) is str, nazwiska))
+nazwiska_wyczyszczone = list(filter(lambda x: type(x) is str, nazwiska))
 print(nazwiska_wyczyszczone)
 # ['jan kot', 'ANNA KRÓL', 'jÓzef BYK', 'ROBERT wąŻ']
 

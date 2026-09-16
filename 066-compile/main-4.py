@@ -1,42 +1,37 @@
-import math
+# compile() + eval() - porównanie czasu liczenia dwóch formuł z kompilacją i bez, na milionie argumentów.
 import time
 
-formulas_list = [
-     "abs(x**3 - x**0.5)",
-     "abs(math.sin(x) * x**2)"
-     ]
+formulas_list = ["abs(x**3 - x**0.5)", "abs(math.sin(x) * x**2)"]
 
 argument_list = []
 
 
-for i in range (1000000):
-    argument_list.append(i/10)
+for i in range(1000000):
+    argument_list.append(i / 10)
 
 for formula in formulas_list:
-
     results_list = []
-    print("Formula {}".format(formula))
+    print(f"Formula {formula}")
     start = time.time()
     for x in argument_list:
         results_list.append(eval(formula))
-    print('min = {}  max = {}'.format(min(results_list), max(results_list)))
+    print(f"min = {min(results_list)}  max = {max(results_list)}")
     stop = time.time()
-    print("Calculation time: {}".format(stop - start))
+    print(f"Calculation time: {stop - start}")
 
 
 for formula in formulas_list:
-
     results_list = []
-    print("Formula {}".format(formula))
+    print(f"Formula {formula}")
 
     start = time.time()
-    compiled_formula = compile(formula, formula, 'eval')
+    compiled_formula = compile(formula, formula, "eval")
     for x in argument_list:
         results_list.append(eval(compiled_formula))
-    print('min = {}  max = {}'.format(min(results_list), max(results_list)))
+    print(f"min = {min(results_list)}  max = {max(results_list)}")
     stop = time.time()
 
-    print("Calculation time: {}".format(stop - start))
+    print(f"Calculation time: {stop - start}")
 
 # Formula abs(x**3 - x**0.5)
 # min = 0.0  max = 999997000002683.6

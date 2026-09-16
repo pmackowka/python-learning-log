@@ -1,7 +1,9 @@
+# Funkcja jako wartość - przypisanie funkcji do zmiennej (bez wywołania) i wywołanie przez nią.
 def BuyMe(what):
-	print("Give me", what)
+    print("Give me", what)
 
-BuyMe('a new car')
+
+BuyMe("a new car")
 # Give me a new car
 
 StealForMe = BuyMe
@@ -11,7 +13,6 @@ print(StealForMe)
 StealForMe("abc")
 # Give me abc
 
-def GoLeft(*args):
-	print("PLACEHOLDER - TURNING left with", *args)
 
-	
+def GoLeft(*args):
+    print("PLACEHOLDER - TURNING left with", *args)

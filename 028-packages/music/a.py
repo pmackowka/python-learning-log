@@ -1,2 +1,2 @@
 def funkcja_a():
-	print("aaaaaa")
+    print("aaaaaa")

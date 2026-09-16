@@ -1,9 +1,11 @@
+# random.randint() na dwa sposoby (pozycyjnie i przez a=/b=) oraz generowanie
+# listy losowych liczb w pętli for i while.
 import random
 
 random.randint(1, 10)
 random.randint(a=1, b=10)
 
-a = [int(random.random()*10) for _ in range(10)]
+a = [int(random.random() * 10) for _ in range(10)]
 print(a)
 
 

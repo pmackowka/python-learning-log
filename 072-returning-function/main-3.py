@@ -1,4 +1,4 @@
-'''Teraz przystąpisz do pisania swojej funkcji generującej inne funkcje:
+"""Teraz przystąpisz do pisania swojej funkcji generującej inne funkcje:
 1. Utwórz funkcję create_function przyjmującą argument span, który może przyjąć wartość:
 'm' gdy należy wygenerować funkcję zwracającą różnicę w minutach
 'h' gdy należy wygenerować funkcję zwracającą różnicę w minutach
@@ -13,20 +13,22 @@ Na tym etapie można sprawdzać efekty swojej pracy
 1. Wygeneruj funkcje f_minutes wywołując create_function z parametrem 'm'
 2. Wygeneruj funkcje f_hours wywołując create_function z parametrem 'h'
 3. Wygeneruj funkcje f_days  wywołując create_function z parametrem 'd'
-4. Przetestuj działanie funkcji:'''
-
+4. Przetestuj działanie funkcji:"""
 
 from datetime import datetime
 
+
 def create_function(span):
-    if span == 'm':
+    if span == "m":
         sec = 60
-    elif span == 'h':
+    elif span == "h":
         sec = 3600
-    elif span == 'd':
+    elif span == "d":
         sec = 86400
     else:
-        raise ValueError("Invalid span. Use 'm' for minutes, 'h' for hours, or 'd' for days.")
+        raise ValueError(
+            "Invalid span. Use 'm' for minutes, 'h' for hours, or 'd' for days."
+        )
 
     print(sec)
 
@@ -39,9 +41,10 @@ def f(start, end):
     exec(source, globals())
     return f
 
-f_minutes = create_function('m') # 60
-f_hours = create_function('h') # 3600
-f_days = create_function('d') # 86400
+
+f_minutes = create_function("m")  # 60
+f_hours = create_function("h")  # 3600
+f_days = create_function("d")  # 86400
 
 start = datetime(2024, 1, 1, 0, 0, 0)
 end = datetime.now()

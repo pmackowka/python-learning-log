@@ -1,12 +1,14 @@
+# Pętla for - ciąg Fibonacciego, filtrowanie słów z literą "p", iteracja po słowniku,
+# zliczanie wystąpień słów w tekście.
 fibonacciIterations = 20
 a1 = 0
 a2 = 1
 a3 = 0
-for i in range(0,fibonacciIterations):
-    print('Step',i,'value',a3)
-    a1=a2
-    a2=a3
-    a3=a1+a2
+for i in range(fibonacciIterations):
+    print("Step", i, "value", a3)
+    a1 = a2
+    a2 = a3
+    a3 = a1 + a2
 
 # Step 0 value 0
 # Step 1 value 1
@@ -28,9 +30,9 @@ for i in range(0,fibonacciIterations):
 # Step 17 value 1597
 # Step 18 value 2584
 # Step 19 value 4181
-print('-------------------------------------------------')
+print("-------------------------------------------------")
 
-text='''
+text = """
 Industrial Light & Magic: In this case, you find Python
 used in the production process for scripting complex,
 computer graphic-intensive films. Originally, Industrial
@@ -43,10 +45,10 @@ can be embedded within a larger software system as a scripting
 language, even if the system is written in a language such as
 C/C++. It turns out that Python can successfully interact with
 these other languages in situations in which some languages can't.
-'''
-listOfWords = text.replace("\n"," ").split(' ')
+"""
+listOfWords = text.replace("\n", " ").split(" ")
 for word in listOfWords:
-    if word.lower().find('p')>=0:
+    if word.lower().find("p") >= 0:
         print(word)
 
 # Python
@@ -64,27 +66,27 @@ for word in listOfWords:
 # Python
 # scripting
 # Python
-print('-----------------------------------------------')
+print("-----------------------------------------------")
 
 
-dictionary={'A':'80%-10%','B':'60%-80%','C':'50-60%','D':'less than 50%'}
-for word in dictionary.keys():
-    print(word,'-',dictionary[word])
+dictionary = {"A": "80%-10%", "B": "60%-80%", "C": "50-60%", "D": "less than 50%"}
+for word in dictionary:
+    print(word, "-", dictionary[word])
 
 # A - 80%-10%
 # B - 60%-80%
 # C - 50-60%
 # D - less than 50
 
-print('-----------------------------------------------')
+print("-----------------------------------------------")
 
 
-wordDictionary={}
+wordDictionary = {}
 for word in listOfWords:
-    if word in wordDictionary.keys():
-        wordDictionary[word] = wordDictionary[word]+1
+    if word in wordDictionary:
+        wordDictionary[word] = wordDictionary[word] + 1
     else:
-        wordDictionary.setdefault(word,1)
+        wordDictionary.setdefault(word, 1)
 
 print(wordDictionary)
 

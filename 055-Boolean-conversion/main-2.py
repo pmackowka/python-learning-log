@@ -15,7 +15,7 @@ jeśli nie, to ma wyświetlić komunikat o tym, że wybrana jest niepoprawna opc
 """
 
 # Lista opcji do wyboru
-options = ['load data', 'export data', 'analyze & predict']
+options = ["load data", "export data", "analyze & predict"]
 
 while True:
     # Wyświetlanie menu
@@ -45,5 +45,3 @@ while True:
         print(f"Wybrano opcję {option_number}: {options[option_number - 1]}")
     else:
         print("Niepoprawny numer opcji! Wybierz poprawny numer.")
-
-
